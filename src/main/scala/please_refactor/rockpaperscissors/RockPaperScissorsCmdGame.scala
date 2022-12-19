@@ -1,19 +1,21 @@
 package please_refactor.rockpaperscissors
 
 import benjamingarrett.rockpaperscissorstools.{Paper, RPSHistoryBasedPlayer, RPSMove, RPSTournament, Rock, Scissors}
-
 import scala.io.StdIn.readLine
+
 
 object RockPaperScissorsCmdGame {
   def main(args: Array[String]) = {
-    greeting
-    print("Enter 1 for live game play. Enter 2 for automatic tournament season: ")
-    readLine() match {
-      case "1" => liveGamePlay
-      case "2" => handleTournamentSeason
-      case _ => println("Response not understood.")
-    }
-    goodbye
+    TournamentConfigParser.go
+      handleTournamentSeason
+//    greeting
+//    print("Enter 1 for live game play. Enter 2 for automatic tournament season: ")
+//    readLine() match {
+//      case "1" => liveGamePlay
+//      case "2" => handleTournamentSeason
+//      case _ => println("Response not understood.")
+//    }
+//    goodbye
   }
   private def greeting = println("Welcome to Rock-Paper-Scissors")
   private def goodbye = println("Thanks for playing Rock-Paper-Scissors")
